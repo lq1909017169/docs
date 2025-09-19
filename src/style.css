@@ -63,6 +63,9 @@ code,
 [class*="language-"] {
   max-width: none !important;
   width: 100% !important;
+  white-space: pre-wrap !important; /* Allow code to wrap while preserving formatting */
+  word-wrap: break-word !important; /* Break long words if necessary */
+  overflow-wrap: break-word !important; /* Modern property for word wrapping */
 }
 
 .prose > .group > span.cursor-pointer > code {
@@ -339,4 +342,28 @@ h6 span img {
 [class*="callout"] i {
   font-size: inherit !important; /* Match callout text size */
   color: inherit !important; /* Match callout text color */
+}
+
+/* Ensure mermaid diagrams are centered */
+.mermaid {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+/* Responsive tables with horizontal scrolling */
+table {
+  /* Table layout preserved for proper caption/column sizing */
+}
+
+/* Responsive tables with horizontal scrolling */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  width: 100%;
+}
+
+/* Prevent table cells from breaking layout */
+table th {
+  white-space: nowrap;
 }
